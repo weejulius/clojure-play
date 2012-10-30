@@ -1,0 +1,12 @@
+set mouse=a
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
+
+"clojure setting
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#ParenRainbow = 1
+"let vimclojure#WantNailgun = 1
+let vimclojure#SplitPos = "right"
