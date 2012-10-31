@@ -86,6 +86,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 
 " colojure
 Bundle 'vim-scripts/VimClojure'
+"Bundle 'vim-scripts/slimv.vim'
 
 
 

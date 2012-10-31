@@ -237,6 +237,7 @@ let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#ParenRainbow = 1
 let vimclojure#SplitPos = "right"
 let vimclojure#WantNailgun = 1
+autocmd BufRead,BufNewFile *.clj nmap xyz <Plug>ClojureEvalToplevel.
 
 
 "neosnippet
@@ -251,3 +252,5 @@ endif
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
+
+let g:slimv_swank_clojure ='! xterm -e sbcl --load ~/.vim/bundle/slimv.vim/slime/start-swank.lisp &'
