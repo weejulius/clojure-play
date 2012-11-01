@@ -54,6 +54,7 @@ set matchpairs+=<:>                                               " specially fo
 "set relativenumber
 "set ruler                                                         " show cursor position in status bar
 "set showmode                                                      " show mode in status bar (insert/replace/...)
+set backupdir=/tmp/vim                                            "put the backfile to this folder, please ensure the fold is existing
 
 " Default Indentation
 set autoindent
@@ -152,7 +153,7 @@ let NERDTreeShowBookmarks=1
 let NERDTreeWinPos = "right"
 
 " ZenCoding
-let g:user_zen_expandabbr_key='<C-j>'
+"let g:user_zen_expandabbr_key='<C-j>'
 
 " powerline
 "let g:Powerline_symbols = 'fancy'
@@ -167,8 +168,8 @@ let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 set completeopt-=preview
 
-imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
+imap <C-o> <Plug>(neocomplcache_snippets_force_expand)
+smap <C-o> <Plug>(neocomplcache_snippets_force_expand)
 imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
 smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
 
@@ -237,8 +238,6 @@ let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#ParenRainbow = 1
 let vimclojure#SplitPos = "right"
 let vimclojure#WantNailgun = 1
-autocmd BufRead,BufNewFile *.clj nmap xyz <Plug>ClojureEvalToplevel.
-
 
 "neosnippet
 imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
