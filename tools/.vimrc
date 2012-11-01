@@ -54,7 +54,7 @@ set matchpairs+=<:>                                               " specially fo
 "set relativenumber
 "set ruler                                                         " show cursor position in status bar
 "set showmode                                                      " show mode in status bar (insert/replace/...)
-set backupdir=/tmp/vim                                            "put the backfile to this folder, please ensure the fold is existing
+set backupdir=~/.vim/tmp/
 
 " Default Indentation
 set autoindent

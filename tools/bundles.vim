@@ -43,7 +43,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 "--------------
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
-Bundle 'humiaozuzu/TabBar'
+"Bundle 'humiaozuzu/TabBar'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
@@ -53,22 +53,22 @@ Bundle 'scrooloose/syntastic'
 "-------------
 " Other Utils
 " ------------
-Bundle 'humiaozuzu/fcitx-status'
+"Bundle 'humiaozuzu/fcitx-status'
 Bundle 'nvie/vim-togglemouse'
 
 "----------------------------------------
 " Syntax/Indent for language enhancement
 "----------------------------------------
 " web backend
-Bundle '2072/PHP-Indenting-for-VIm'
+"Bundle '2072/PHP-Indenting-for-VIm'
 "Bundle 'tpope/vim-rails'
-Bundle 'beyondwords/vim-jinja2'
+"Bundle 'beyondwords/vim-jinja2'
 "Bundle 'digitaltoad/vim-jade'
 
 " web front end
-Bundle 'othree/html5.vim'
-Bundle 'tpope/vim-haml'
-Bundle 'nono/jquery.vim'
+"Bundle 'othree/html5.vim'
+"Bundle 'tpope/vim-haml'
+"Bundle 'nono/jquery.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 "Bundle 'groenewege/vim-less'
