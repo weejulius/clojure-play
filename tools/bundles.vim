@@ -47,6 +47,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
 
