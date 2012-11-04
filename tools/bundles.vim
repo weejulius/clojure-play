@@ -35,8 +35,10 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'sjl/gundo.vim'
 "Bundle 'Raimondi/delimitMate'
 Bundle 'kana/vim-smartinput'
+Bundle 'vim-scripts/Auto-Pairs'
 Bundle 'godlygeek/tabular'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'gcmt/ozzy.vim'
 
 "--------------
 " IDE features
@@ -70,7 +72,7 @@ Bundle 'nvie/vim-togglemouse'
 "Bundle 'tpope/vim-haml'
 "Bundle 'nono/jquery.vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
+"Bundle 'kchmck/vim-coffee-script'
 "Bundle 'groenewege/vim-less'
 "Bundle 'wavded/vim-stylus'
 
