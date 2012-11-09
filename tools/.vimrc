@@ -59,9 +59,9 @@ set backupdir=~/.vim/tmp/
 " Default Indentation
 set autoindent
 set smartindent     " indent when
-set tabstop=4       " tab width
-set softtabstop=4   " backspace & 
-set shiftwidth=4    " indent width
+set tabstop=2       " tab width
+set softtabstop=2   " backspace & 
+set shiftwidth=2    " indent width
 "set textwidth=79
 set expandtab       " expand tab to space
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
@@ -238,6 +238,7 @@ let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#ParenRainbow = 1
 let vimclojure#SplitPos = "right"
 let vimclojure#WantNailgun = 1
+let vimclojure#NailgunClient = "/Users/julius.yu/clojure/tools/bin/ng"
 
 "neosnippet
 imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
