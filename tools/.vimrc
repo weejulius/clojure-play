@@ -252,4 +252,3 @@ let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
 
-let g:slimv_swank_clojure ='! xterm -e sbcl --load ~/.vim/bundle/slimv.vim/slime/start-swank.lisp &'

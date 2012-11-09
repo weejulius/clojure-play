@@ -3,7 +3,8 @@
   :url "http://example.com/FIXME"
   :dependencies [[org.clojure/clojure "1.4.0"]
                  [compojure "1.1.1"]
-                 [midje "1.4.0"]]
+                 [midje "1.4.0"]
+                 [kerodon "0.0.7"]]
   :plugins [[lein-ring "0.7.1"]
             [lein-cucumber "1.0.0"] ]
   :ring {:handler payment.handler/app}
