@@ -157,6 +157,7 @@ let NERDTreeWinPos = "right"
 
 " powerline
 "let g:Powerline_symbols = 'fancy'
+"let g:Powerline_theme = 'solarized256'
 
 " NeoComplCache
 let g:neocomplcache_enable_at_startup=1
@@ -213,7 +214,7 @@ nnoremap <c-l> <c-w>l
 
 " for macvim
 if has("gui_running")
-    set go=aAce  " remove toolbar
+"    set go=aAce  " remove toolbar
     "set transparency=30
     set guifont=Menlo:h13
     set showtabline=2
@@ -231,6 +232,8 @@ if has("gui_running")
     map <D-8> 8gt
     map <D-9> 9gt
     map <D-0> :tablast<CR>
+
+let vimclojure#NailgunClient = "/Users/julius.yu/clojure/tools/bin/ng"
 endif
 
 " clojure
@@ -238,7 +241,6 @@ let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#ParenRainbow = 1
 let vimclojure#SplitPos = "right"
 let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = "/Users/julius.yu/clojure/tools/bin/ng"
 
 "neosnippet
 imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
