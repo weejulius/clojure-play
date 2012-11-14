@@ -17,4 +17,3 @@
       So that the provider can create payment page according to the id for the user"
       (gen-payment {:user 123 :items '(1)}) => (roughly 1)
       (gen-payment {:user 124 :items '(1)}) => (roughly 2))
-

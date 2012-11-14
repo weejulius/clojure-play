@@ -239,7 +239,7 @@ endif
 " clojure
 let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#ParenRainbow = 1
-let vimclojure#SplitPos = "right"
+let vimclojure#SplitPos = "bottom"
 let vimclojure#WantNailgun = 1
 
 "neosnippet
