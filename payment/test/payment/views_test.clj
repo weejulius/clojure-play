@@ -1,15 +1,18 @@
 (ns payment.views-test
-  (:use clojure.test))
+  (:use clojure.test
+        midje.sweet
+        payment.handler))
 
 (deftest post-subscribe-item 
          (testing "post to subscribe an item"
                   (let [request {
+                                 :scheme :http
                                  :uri "/membership/subscribe_rich"
                                  :server-name "localhost"
                                  :server-port 3000
                                  :content-type "application/x-www-form-urlencoded"
                                  :request-method :post
-                                 :parameters {
+                                 :params {
                                               :USERID "123"
                                               :ITEMID "1"
                                               :DOMAINID "d1"
@@ -20,5 +23,7 @@
                                   :status 200
                                   :body "1"
                                   }]
-                    (is (= (ring-app request) 
+                    (is (= (app-routes request) 
                            response)))))
+
+(fact )

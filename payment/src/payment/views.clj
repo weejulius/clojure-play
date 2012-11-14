@@ -2,7 +2,10 @@
 
 (defn subscribe-item
   "subscribe an new item"
-  [{ userId :USERID}]
-  (str "welcome! user:" userId)  
+  [{user-id :USERID
+    item-id :ITEMID
+    payment-type :PAYMENTTYPE
+    domain-id :DOMAINID}]
+  (str "welcome? user:" user-id)  
   )
 
