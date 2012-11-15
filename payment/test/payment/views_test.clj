@@ -1,7 +1,8 @@
 (ns payment.views-test
   (:use clojure.test
         midje.sweet
-        payment.handler))
+        payment.handler
+        payment.views))
 
 (deftest post-subscribe-item 
          (testing "post to subscribe an item"
@@ -26,4 +27,5 @@
                     (is (= (app-routes request) 
                            response)))))
 
-(fact )
+(fact "default domain is given if not present"
+      (give-default-domain-id-if-nil nil) => :default-domain-id )
