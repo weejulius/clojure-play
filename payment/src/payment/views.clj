@@ -18,21 +18,26 @@
   ([]
    (give-default-domain-id-if-nil :poppen))
   ([default-domain-id]
-   #(if(blank? %) default-domain-id (keyword %)))) 
+   #(if(blank? %) default-domain-id (keyword %))))
+
+(defn in?
+  "true if the element is in the seq"
+  [seq elm]
+  (if(some #(= elm %) seq) true false))
 
 (defn validate-domain-id?
   "valid domain id if the domain id is found from the pre-defined domain ids,
   note: a default domain id is given if the domain id is not present"
   ([domain-ids domain-id]
    (validate-domain-id? domain-ids domain-id nil))
-
   ([domain-ids domain-id give-default-domain]
-   (in? domain-ids ((fnil apply keyword [domain-id]) give-default-domain [domain-id]))))
+   (in? domain-ids
+        ((fnil apply keyword [domain-id]) give-default-domain [domain-id]))))
 
 (fact "default domain is given if not present"
       ((give-default-domain-id-if-nil) nil) => :poppen
-      (let [give-default-domain (give-default-domain-id-if-nil :default-domain-id)] 
-        (give-default-domain nil) => :default-domain-id 
+      (let [give-default-domain (give-default-domain-id-if-nil :default-domain-id)]
+        (give-default-domain nil) => :default-domain-id
         (give-default-domain "a") =>  :a
         (give-default-domain "") => :default-domain-id))
 
@@ -46,7 +51,4 @@
       (in? [1 2 3] 1) => true
       (in? [1 2 3] 4) => false)
 
-(defn in?
-  "true if the element is in the seq"
-  [seq elm]
-  (if(some #(= elm %) seq) true false)) 
+

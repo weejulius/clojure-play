@@ -7,6 +7,7 @@
                  [kerodon "0.0.7"]
                  [org.clojure/java.jdbc "0.2.3"]
                  [hiccup "1.0.0"]
+                 [org.clojure/tools.nrepl "0.2.0-beta10"]
                  [mysql/mysql-connector-java "5.1.21"]]
   :plugins [[lein-ring "0.7.1"]
             [lein-cucumber "1.0.0"]]

@@ -11,7 +11,16 @@ syntax enable
 syntax on
 
 " color theme
-color Tomorrow-Night-Eighties 
+" color Tomorrow-Night-Eighties 
+"let g:solarized_visibility="low"    "default value is normal
+"let g:solarized_hitrail=1    "default value is 0
+"let g:solarized_termcolors=256
+colorscheme Tomorrow
+if has('gui_running')
+  set background=light
+else
+  set background=light
+endif
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -51,10 +60,12 @@ set title                                                         " show file in
 set laststatus=2                                                  " use 2 lines for the status bar
 set matchtime=2                                                   " show matching bracket for 0.2 seconds
 set matchpairs+=<:>                                               " specially for html
+set linespace=5
 "set relativenumber
 "set ruler                                                         " show cursor position in status bar
 "set showmode                                                      " show mode in status bar (insert/replace/...)
 set backupdir=~/.vim/tmp/
+set dir=~/.vim/tmp/
 
 " Default Indentation
 set autoindent
@@ -62,7 +73,7 @@ set smartindent     " indent when
 set tabstop=2       " tab width
 set softtabstop=2   " backspace & 
 set shiftwidth=2    " indent width
-"set textwidth=79
+set textwidth=79
 set expandtab       " expand tab to space
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby,clojure setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=79
@@ -81,25 +92,25 @@ let g:html_indent_style1 = "inc"
 
 " Rainbow parentheses for Lisp and variants
 let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
+      \ ['brown',       'RoyalBlue3'],
+      \ ['Darkblue',    'SeaGreen3'],
+      \ ['darkgray',    'DarkOrchid3'],
+      \ ['darkgreen',   'firebrick3'],
+      \ ['darkcyan',    'RoyalBlue3'],
+      \ ['darkred',     'SeaGreen3'],
+      \ ['darkmagenta', 'DarkOrchid3'],
+      \ ['brown',       'firebrick3'],
+      \ ['gray',        'RoyalBlue3'],
+      \ ['black',       'SeaGreen3'],
+      \ ['darkmagenta', 'DarkOrchid3'],
+      \ ['Darkblue',    'firebrick3'],
+      \ ['darkgreen',   'RoyalBlue3'],
+      \ ['darkcyan',    'SeaGreen3'],
+      \ ['darkred',     'DarkOrchid3'],
+      \ ['red',         'firebrick3'],
+      \ ]
 let g:rbpt_max = 16
-autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
+autocmd Syntax lisp,scheme,racket RainbowParenthesesToggle
 
 " tabbar
 let g:Tb_MaxSize = 2
@@ -135,12 +146,12 @@ if executable('coffeetags')
         \ }
 
   let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'sort' : 0,
-    \ 'kinds' : [
+        \ 'ctagstype' : 'markdown',
+        \ 'sort' : 0,
+        \ 'kinds' : [
         \ 'h:sections'
-    \ ]
-    \ }
+        \ ]
+        \ }
 endif
 
 " Nerd Tree 
@@ -214,33 +225,36 @@ nnoremap <c-l> <c-w>l
 
 " for macvim
 if has("gui_running")
-"    set go=aAce  " remove toolbar
-    "set transparency=30
-    set guifont=Menlo:h13
-    set showtabline=2
-    set columns=140
-    set lines=40
-    noremap <D-M-Left> :tabprevious<cr>
-    noremap <D-M-Right> :tabnext<cr>
-    map <D-1> 1gt
-    map <D-2> 2gt
-    map <D-3> 3gt
-    map <D-4> 4gt
-    map <D-5> 5gt
-    map <D-6> 6gt
-    map <D-7> 7gt
-    map <D-8> 8gt
-    map <D-9> 9gt
-    map <D-0> :tablast<CR>
+  ""set go=aAce  " remove toolbar
+  "set transparency=30
+  set guifont=Fixed\ 11
+  set showtabline=2
+  set columns=140
+  set lines=40
+  noremap <D-M-Left> :tabprevious<cr>
+  noremap <D-M-Right> :tabnext<cr>
+  map <D-1> 1gt
+  map <D-2> 2gt
+  map <D-3> 3gt
+  map <D-4> 4gt
+  map <D-5> 5gt
+  map <D-6> 6gt
+  map <D-7> 7gt
+  map <D-8> 8gt
+  map <D-9> 9gt
+  map <D-0> :tablast<CR>
 
-let vimclojure#NailgunClient = "/Users/julius.yu/clojure/tools/bin/ng"
+  let vimclojure#NailgunClient = "/Users/julius.yu/clojure/tools/bin/ng"
 endif
 
 " clojure
 let g:vimclojure#HighlightBuiltins = 1
-let g:vimclojure#ParenRainbow = 1
+let g:vimclojure#DynamicHighlighting = 0
+let g:vimclojure#ParenRainbow = 0
 let vimclojure#SplitPos = "bottom"
-let vimclojure#WantNailgun = 1
+"let vimclojure#WantNailgun = 1
+hi clojureSexpLevel0 guifg=blue
+hi special guifg=purple
 
 "neosnippet
 imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -248,10 +262,13 @@ smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" 
 
 " For snippet_complete marker.
 if has('conceal')
-   set conceallevel=2 concealcursor=i
+  set conceallevel=2 concealcursor=i
 endif
 
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
 
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
