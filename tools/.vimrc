@@ -252,9 +252,9 @@ let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#DynamicHighlighting = 0
 let g:vimclojure#ParenRainbow = 0
 let vimclojure#SplitPos = "bottom"
-"let vimclojure#WantNailgun = 1
-hi clojureSexpLevel0 guifg=blue
-hi special guifg=purple
+let vimclojure#WantNailgun = 1
+hi clojureSexpLevel0 ctermfg=blue
+hi link special Function
 
 "neosnippet
 imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
