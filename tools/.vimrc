@@ -110,7 +110,7 @@ let g:rbpt_colorpairs = [
       \ ['red',         'firebrick3'],
       \ ]
 let g:rbpt_max = 16
-autocmd Syntax lisp,scheme,racket RainbowParenthesesToggle
+autocmd Syntax lisp,clojure,scheme,racket RainbowParenthesesToggle
 
 " tabbar
 let g:Tb_MaxSize = 2
@@ -250,11 +250,11 @@ endif
 " clojure
 let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#DynamicHighlighting = 0
-let g:vimclojure#ParenRainbow = 0
+let g:vimclojure#ParenRainbow = 1
 let vimclojure#SplitPos = "bottom"
 let vimclojure#WantNailgun = 1
-hi clojureSexpLevel0 ctermfg=blue
-hi link special Function
+hi clojureSexpLevel0 ctermfg=blue guifg=blue
+hi special guifg=purple
 
 "neosnippet
 imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
