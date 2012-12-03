@@ -228,6 +228,7 @@ if has("gui_running")
   ""set go=aAce  " remove toolbar
   "set transparency=30
   set guifont=Fixed\ 11
+  set clipboard=unnamed
   set showtabline=2
   set columns=140
   set lines=40

@@ -58,7 +58,7 @@ Bundle 'scrooloose/syntastic'
 " ------------
 "Bundle 'humiaozuzu/fcitx-status'
 Bundle 'nvie/vim-togglemouse'
-Bundle 'vim-scripts/fakeclip'
+"Bundle 'vim-scripts/fakeclip'
 
 "----------------------------------------
 " Syntax/Indent for language enhancement
