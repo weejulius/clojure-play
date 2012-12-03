@@ -19,7 +19,12 @@
   [domain-ids domain-name default-domain-id]
   (let [domain-id (with-default #(blank? %) (keyword domain-name) default-domain-id)
         ))
-
+(defn with-default
+  "return default value if the predicate is qualified"
+  ([pred value default-value map-fn]
+  (if(pred value) default-value (map-fn value)))
+  ([pred value default-value]
+     (with-default pred value default identity))))
 (fact "set default value"
       (with-default nil? "1" "default") => "1"
       (with-default nil? nil "default") => "default"
