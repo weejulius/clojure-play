@@ -17,16 +17,19 @@
 (defn fetch-domain-id-by-name
   "get the valid domain id according the name passed in"
   [domain-ids domain-name default-domain-id]
-  (if(blank? domain-name) default-domain-id
-    (let[domain-id (keyword domain-name) valid-domain-id (some #{domain-id} domain-ids)]
-      (if(nil? valid-domain-id) 
-        (throw (IllegalArgumentException. (str "the domain '" domain-name "' is not existing")))
-        valid-domain-id))))
+  (let [domain-id (with-default #(blank? %) (keyword domain-name) default-domain-id)
+        ))
+
+(fact "set default value"
+      (with-default nil? "1" "default") => "1"
+      (with-default nil? nil "default") => "default"
+      (with-default #(> % 1) 1 0) => 1
+      (with-default #(> % 1) 3 0) => 0)
 
 (fact "fetch domain id by name"
       (fetch-domain-id-by-name domain-ids "poppen" :poppen) => :poppen
       (fetch-domain-id-by-name domain-ids "gays" :poppen) => :gays
       (fetch-domain-id-by-name domain-ids "other" :poppen) =>
-       (throws IllegalArgumentException "the domain 'other' is not existing") 
+       (throws IllegalArgumentException "the domain 'other' is not existing")
       (fetch-domain-id-by-name domain-ids "" :a) => :a
       (fetch-domain-id-by-name domain-ids nil :abc) => :abc)
