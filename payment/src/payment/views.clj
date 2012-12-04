@@ -38,6 +38,16 @@
   [item coll]
   (some #{item} coll))
 
+(defn can-buy-more-items?
+  "check if the user can buy more items"
+  [user items]
+  (:status user))
+
+
+(fact "validate if the user is able to buy one more item"
+      (can-buy-more-item? {:user-id "1234" :status :has-chargeback}) => true)
+
+
 (fact "test find item in the list"
       (find-item :poppen domain-ids) => :poppen
       (find-item :other domain-ids) => nil)
