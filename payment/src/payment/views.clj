@@ -6,6 +6,19 @@
 (def default-domain-id :poppen)
 (def domain-ids [:poppen :kauf :gays])
 
+
+(defn with-default
+  "return default value if the predicate is qualified"
+  ([pred value default-value map-fn]
+     (if(pred value) [default-value true] [(map-fn value) false]))
+  ([pred value default-value]
+     (with-default pred value default-value identity)))
+
+(defn find-item
+  "find the item in list or set, nil if it is not existing"
+  [item coll]
+  (some #{item} coll))
+
 (defn subscribe-item
   "subscribe a new item"
   [{user-id :USERID
@@ -26,26 +39,15 @@
       valid-domain-id)))
 
 
-(defn with-default
-  "return default value if the predicate is qualified"
-  ([pred value default-value map-fn]
-     (if(pred value) [default-value true] [(map-fn value) false]))
-  ([pred value default-value]
-     (with-default pred value default-value identity)))
-
-(defn find-item
-  "find the item in list or set, nil if it is not existing"
-  [item coll]
-  (some #{item} coll))
-
 (defn can-buy-more-items?
-  "check if the user can buy more items"
+  "check if the user can buy more items, perhas there is a specification
+   that every user can only buy 2 items mostly"
   [user items]
   (:status user))
 
 
 (fact "validate if the user is able to buy one more item"
-      (can-buy-more-item? {:user-id "1234" :status :has-chargeback}) => true)
+     (can-buy-more-items? {:user-id "1234" :status :has-chargeback}) => true)
 
 
 (fact "test find item in the list"
