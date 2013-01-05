@@ -1,0 +1,12 @@
+#print all processes
+alias aps='ps aux'
+#search processes by name
+gps(){ ps aux|grep "$@";}
+
+#list the net status
+alias ns='netstat -nltp'
+#search the process using the port ect
+gns(){ sudo netstat -nltp|grep "$@";}
+
+#find file by name
+ff(){ find "$1" -name "$2";}
