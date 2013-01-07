@@ -10,3 +10,7 @@ gns(){ sudo netstat -nltp|grep "$@";}
 
 #find file by name
 ff(){ find "$1" -name "$2";}
+
+
+#shutdown me
+alias down=' sudo shutdown -h now'
