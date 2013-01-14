@@ -1,3 +1,4 @@
+
 (ns payment.views
   (:use [midje.sweet]
         [clojure.string :only (blank?)])

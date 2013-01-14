@@ -6,5 +6,6 @@
                   [compojure/lein-template "0.2.0"]
                   [lein-newnew "0.2.6"]
                   [lein-midje "1.0.10"]
+                  [lein-create-template "0.1.1"]
                   [lein-tarsier "0.9.4"]]
         } }
