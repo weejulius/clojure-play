@@ -14,3 +14,6 @@ ff(){ find "$1" -name "$2";}
 
 #shutdown me
 alias down=' sudo shutdown -h now'
+
+#grep history
+hg(){ history | grep $* | sort -k 2 | uniq -s 7 | sort -g | more;  }
