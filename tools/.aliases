@@ -19,8 +19,17 @@ alias down=' sudo shutdown -h now'
 hg(){ history | grep $* | sort -k 2 | uniq -s 7 | sort -g | more;  }
 
 #emacsclient
-alias e='emacsclient -t' 
-alias ec='emacsclient -c'
+alias e='emacsclient -t ' 
+alias ec='emacsclient -c '
 
 #tail
-alias tailf='tail -f'
+alias tailf='tail -f '
+
+
+#git
+alias gts='git status '
+alias gtpul='git pull '
+alias gtpus='git push '
+alias gtcm='git commit -m '
+ggt(){git log --grep='$*';}
+gtsc(){git log -p --since='$*';}

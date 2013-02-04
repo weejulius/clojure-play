@@ -1,0 +1,10 @@
+[user]
+	name = jyu
+	email = wee.jud@gmail.com
+[credential]
+	helper = cache --timeout=660000
+[core]
+	pager = less -r
+	editor = emacs
+[color]
+	ui = true
