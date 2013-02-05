@@ -1,0 +1,110 @@
+key command usage
+C-f forward-char go to next char
+M-f forward-word go to next word
+C-b backward-char go to last char
+M-b backward-word go to last word
+C-p previous-line go to last line
+C-n next-line go to next line
+S-RET insert-empty-line add new line above
+M-RET insert-empty-line-above add new line below
+C-j newline-and-indent move the tail to next line
+C-M-o split-line split line
+C-A move-beginning-of-line go to line head
+C-E move-end-of-line go to line end
+M-S-< beginning-of-buffer go to file head
+M-S-> end-of-buffer go to file end
+M-m back-to-indentation go to begining non white space char of line
+M-a backward-sentence go to sentense end
+M-e forward-sentence go to sentense head
+M-} backward-paragraph go to paragraph end
+M-{ forward-paragraph go to paragrah head
+C-M-p paredit-backward-down go to last bracket
+C-M-n paredit-forward-down go to next bracket
+C-S-BS kill-whole-line delete the whole line
+C-k kill-line delete the line after the cursor
+M-k kill-line-backward delete the line before the cursor
+       delete-trailing-whitespace delete the tail spaces
+                                    delete the head spaces
+M-d kill-word delete word
+M-Del backward-kill-word delete word backward
+
+C-M-q indent-sexp Reindent all the lines within one parenthetical grouping
+C-M-\ indent-region Indent all the lines in the region
+C-x TB indent-rigidly Shift each line in the region by fixed spaces
+                                    Indent scala region (class/function/line/block)
+
+                                    lookup source code of symbol
+                                    copy
+                                    paste
+
+                                    find file among multiple project
+                                    switch project
+                                    adjust windows from hoz to vi
+                                    spell suggestion
+                                    
+                                    go to project root
+                                   
+                                    auto pair
+                                    diff buffer
+                                                      
+C-s isearch-forward search keyword
+                                    search function
+C-c pf projectile-find-file search file in project
+        ack-find-file search file
+                  search usage of function or class
+                  80-column rule
+
+                  go the definition
+                  go to class
+                  go to project
+        
+                  undo
+                  redo
+          
+                  last edit position
+                 
+                  select word
+                  select line
+                   select word by word
+                   
+
+                  integrity git
+                  integrity shell
+
+                  rename occurencies
+
+                  spell check
+
+                  compile
+                  debug
+ 
+                  code browser
+                  
+                  last window
+                  next window
+                  select window by index
+                  select window by name
+                  close window
+           
+                  split window
+                  resize window
+                  
+                  last buffer
+                  next buffer
+                  kill buffer
+                  
+                  auto complete
+                  snippet
+
+                  save file
+                  close without save
+                  reload file
+                  
+                  rename file
+
+                  copy
+                  paste
+
+                  diff two file/buffer
+
+                  create snippet
