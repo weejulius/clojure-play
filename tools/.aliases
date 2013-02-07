@@ -19,8 +19,8 @@ alias down=' sudo shutdown -h now'
 hg(){ history | grep $* | sort -k 2 | uniq -s 7 | sort -g | more;  }
 
 #emacsclient
-alias e='emacsclient -t ' 
-alias ec='emacsclient -c '
+e(){emacsclient -t "$1";}
+ec(){emacsclient -c "$1";}
 
 #tail
 alias tailf='tail -f '
