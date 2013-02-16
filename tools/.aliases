@@ -33,3 +33,6 @@ alias gtpus='git push '
 alias gtcm='git commit -m '
 ggt(){git log --grep='$*';}
 gtsc(){git log -p --since='$*';}
+
+#host file
+alias ehost='sudo ec /etc/hosts'
