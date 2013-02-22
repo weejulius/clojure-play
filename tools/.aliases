@@ -35,4 +35,20 @@ ggt(){git log --grep='$*';}
 gtsc(){git log -p --since='$*';}
 
 #host file
-alias ehost='sudo ec /etc/hosts'
+alias ehost='sudo emacsclient -t -a "" /etc/hosts'
+
+#make note for learning
+learn(){
+  if [ ! -d ~"/repositories/learning" ]
+  then
+    echo "learning git is not found, cloning it";
+    git clone git@github.com:weejulius/learning.git ~/repositories/learning;
+  fi
+
+  if [ ! -d ~"/repositories/learning/$1" ]
+  then
+    echo ~/repositories/learning/$1;
+    mkdir ~/repositories/learning/$1;
+  fi
+ emacsclient -t -a "" ~/repositories/learning/$1/$2.md;
+}
