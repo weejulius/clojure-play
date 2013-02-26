@@ -1,7 +1,7 @@
 #print all processes
 alias aps='ps aux'
 #search processes by name
-gps(){ ps aux|grep "$@";}
+gps(){ ps aux|grep -i "$@";}
 
 #list the net status
 alias ns='netstat -nltp'
