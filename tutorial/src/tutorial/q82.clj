@@ -6,24 +6,25 @@
         ch2 (first w2)]
     (cond
      (> (count w1) (count w2)) (recur w2 w1)
-     (= ch1 ch2) (recur (next w1) (next w2))
-     (= ch1 (second w2)) (= (next w1) (drop 2 w2))
-     (= ch2 (second w1)) (= (next w2) (drop 2 w1))
-     :else (= (next w1) (next w2)))))
+     (= ch1 ch2) (recur (rest w1) (rest w2))
+     (= ch1 (second w2)) (= (rest w1) (drop 2 w2))
+     (= ch2 (second w1)) (= (rest w2) (drop 2 w1))
+     :else (= (rest w1) (rest w2)))))
 
 
 
 (defn has-word-chain?
   [cur col]
-  (loop [e (first col)]
-   (if (empty? 
-    (if (word-chain? cur e) true
-        (recur (next col)))))
+  (loop [col1 col]
+   (println (first col1)  "cur:" cur) 
+   (if (empty? col1) false
+    (if (word-chain? cur (first col1)) true
+        (recur (next col))))))
 
 (defn word-chain [col]
-  (loop [col1 col
-         col2 col]
-    (if (has-word-chain? (first col1) col2) (recur (next col1) col2 )
+  (loop [col1 col]
+    (println "col" col1 col)
+   (if (has-word-chain? (first col1) col) (recur (rest col1))
         false)))
 
 (= (next "cd") (drop 2 "dcd"))
